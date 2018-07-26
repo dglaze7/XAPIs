@@ -20,12 +20,7 @@ const cors = corsMidWare({
 server.pre(cors.preflight);
 server.use(cors.actual);
 
-server.use(function(req,res,next){
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Method", "GET, POST, DELETE, OPTIONS, PUT");
-    next();
-});
+
 
 
 server.get('/', (req, res, next) => {
