@@ -2,13 +2,23 @@ const restify = require('restify');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const corsMidWare = require('restify-cors-middleware');
 
 const server = restify.createServer({
     name: 'X Kitchen web API',
     version: '1.0.0'
 });
 
-server.use(bodyParser.json());
+server.use(restify.plugins.bodyParser());
+
+const cors = corsMidWare({
+    origins : ['*'],
+    allowHeaders : ['X-App-Version'],
+    exposeHeaders : []
+})
+
+server.pre(cors.preflight);
+server.use(cors.actual);
 
 server.use(function(req,res,next){
     res.header("Access-Control-Allow-Origin", "*");
