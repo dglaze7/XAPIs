@@ -9,7 +9,7 @@ const server = restify.createServer({
     version: '1.0.0'
 });
 
-server.use(restify.plugins.bodyParser());
+server.use(bodyParser.json());
 
 const cors = corsMidWare({
     origins : ['*'],
