@@ -114,7 +114,7 @@ server.get('/', (req, res, next) => {
 
 require('./components/controllers/template.controller')(server, 'tests');
 require('./components/controllers/users.controller')(server, 'users');
-require('./components/controllers/product.controller')(server, 'products');
+require('./components/controllers/product.controller')(server);
 require('./components/controllers/category.controller')(server, 'categories');
 
 
