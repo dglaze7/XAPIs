@@ -19,4 +19,16 @@ module.exports = function(entity){
     if(entity.modifyBy){
         entity.modifyBy = ObjectId(entity.modifyBy);
     }
+    if(entity.reservationId){
+        entity.reservationId = ObjectId(entity.reservationId);
+    }
+    if(entity.tableId){
+        entity.tableId = ObjectId(entity.tableId);
+    }
+    if(entity.waiterId){
+        entity.waiterId = ObjectId(entity.waiterId);
+    }
+    if(entity.orderId){
+        entity.orderId = ObjectId(entity.orderId);
+    }
 }
